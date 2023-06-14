@@ -1,0 +1,177 @@
+mysql> select avg(Java) as avg_of_Java from Student1;
+
++-------------+
+
+| avg_of_Java |
+
++-------------+
+
+|     72.8333 |
+
++-------------+
+
+mysql> select Name,Reg_no,DBMS from Student1 where DBMS>=95;
+
++------+--------+------+
+
+| Name | Reg_no | DBMS |
+
++------+--------+------+
+
+| Ram  |    102 |   99 |
+
++------+--------+------+
+
+1 row in set (0.00 sec)
+
+mysql> create view Grades as select*from Student1 where OS>90;
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select*from Grades;
+
++--------+---------+------+-------+------+------+-------+--------+
+
+| Reg_no | Name    | DBMS | Maths | Java | Os   | Grade | Result |
+
++--------+---------+------+-------+------+------+-------+--------+
+
+|    100 | Gowtham |   90 |    92 |   89 |   98 | S     | Pass   |
+
+|    101 | Arun    |   91 |    92 |   85 |   97 | A     | Pass   |
+
++--------+---------+------+-------+------+------+-------+--------+
+
+2 rows in set (0.00 sec)
+
+mysql> select *from Student1 order by Name;
+
++--------+---------+------+-------+------+------+-------+--------+
+
+| Reg_no | Name    | DBMS | Maths | Java | Os   | Grade | Result |
+
++--------+---------+------+-------+------+------+-------+--------+
+
+|    101 | Arun    |   91 |    92 |   85 |   97 | A     | Pass   |
+
+|    100 | Gowtham |   90 |    92 |   89 |   98 | S     | Pass   |
+
+|    102 | Ram     |   99 |    92 |   80 |   60 | B     | Pass   |
+
+|    104 | Ramu    |   20 |    34 |   40 |   45 | F     | Fail   |
+
+|    105 | Vetri   |   79 |    90 |   76 |   67 | D     | Pass   |
+
+|    103 | Vikas   |   90 |    91 |   67 |   78 | C     | Pass   |
+
++--------+---------+------+-------+------+------+-------+--------+
+
+6 rows in set (0.00 sec)
+
+mysql> select *from Student1 order by Grade;
+
++--------+---------+------+-------+------+------+-------+--------+
+
+| Reg_no | Name    | DBMS | Maths | Java | Os   | Grade | Result |
+
++--------+---------+------+-------+------+------+-------+--------+
+
+|    101 | Arun    |   91 |    92 |   85 |   97 | A     | Pass   |
+
+|    102 | Ram     |   99 |    92 |   80 |   60 | B     | Pass   |
+
+|    103 | Vikas   |   90 |    91 |   67 |   78 | C     | Pass   |
+
+|    105 | Vetri   |   79 |    90 |   76 |   67 | D     | Pass   |
+
+|    104 | Ramu    |   20 |    34 |   40 |   45 | F     | Fail   |
+
+|    100 | Gowtham |   90 |    92 |   89 |   98 | S     | Pass   |
+
++--------+---------+------+-------+------+------+-------+--------+
+
+6 rows in set (0.00 sec)
+
+mysql> select *from Student1 Where Result="Pass";
+
++--------+---------+------+-------+------+------+-------+--------+
+
+| Reg_no | Name    | DBMS | Maths | Java | Os   | Grade | Result |
+
++--------+---------+------+-------+------+------+-------+--------+
+
+|    100 | Gowtham |   90 |    92 |   89 |   98 | S     | Pass   |
+
+|    101 | Arun    |   91 |    92 |   85 |   97 | A     | Pass   |
+
+|    102 | Ram     |   99 |    92 |   80 |   60 | B     | Pass   |
+
+|    103 | Vikas   |   90 |    91 |   67 |   78 | C     | Pass   |
+
+|    105 | Vetri   |   79 |    90 |   76 |   67 | D     | Pass   |
+
++--------+---------+------+-------+------+------+-------+--------+
+
+5 rows in set (0.00 sec)
+
+mysql> select *from Student1 Where Result="Fail";
+
++--------+------+------+-------+------+------+-------+--------+
+
+| Reg_no | Name | DBMS | Maths | Java | Os   | Grade | Result |
+
++--------+------+------+-------+------+------+-------+--------+
+
+|    104 | Ramu |   20 |    34 |   40 |   45 | F     | Fail   |
+
++--------+------+------+-------+------+------+-------+--------+
+
+1 row in set (0.00 sec)
+
+mysql> select Reg_no,Name,DBMS from Student1 order by DBMS DESC;
+
++--------+---------+------+
+
+| Reg_no | Name    | DBMS |
+
++--------+---------+------+
+
+|    102 | Ram     |   99 |
+
+|    101 | Arun    |   91 |
+
+|    100 | Gowtham |   90 |
+
+|    103 | Vikas   |   90 |
+
+|    105 | Vetri   |   79 |
+
+|    104 | Ramu    |   20 |
+
++--------+---------+------+
+
+6 rows in set (0.00 sec)
+
+mysql> select Reg_no,Name,DBMS from Student1 order by DBMS ASC;
+
++--------+---------+------+
+
+| Reg_no | Name    | DBMS |
+
++--------+---------+------+
+
+|    104 | Ramu    |   20 |
+
+|    105 | Vetri   |   79 |
+
+|    100 | Gowtham |   90 |
+
+|    103 | Vikas   |   90 |
+
+|    101 | Arun    |   91 |
+
+|    102 | Ram     |   99 |
+
++--------+---------+------+
+
+6 rows in set (0.00 sec)
